@@ -9,7 +9,7 @@ import axios from 'axios'
 import { backendURL } from "../Utils/URLS";
 import {toast} from 'react-toastify'
 const initialState = {
-  name: "hello",
+  name: "",
   completed: false
 }
 const Home = () => {
@@ -22,6 +22,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const userId = localStorage.getItem('userId');
+  const userName = localStorage.getItem('userName');
   const getTasks = async ()=>{
     setIsLoading(true);
     try {
@@ -48,6 +49,7 @@ const Home = () => {
       setFormData({name:"",completed:false});
       toast.success("Task updated successfully.");
       await getTasks();
+      setIsEditing(false);
     }
     
   }
@@ -103,6 +105,7 @@ const Home = () => {
   return (
     <>
     <nav>
+      <h4>Hi {userName}!</h4>
         <AiOutlinePoweroff size={40} color='red' onClick={logout} className='logout'/>
     </nav>
     <div className='container'>
