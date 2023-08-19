@@ -14,6 +14,11 @@ nav:hover{
     background-color: #004fa3;
 }
 
+nav h4{
+    position: fixed;
+    left: 4%;
+}
+
 .logout:hover{
     cursor: pointer;
 }
@@ -72,7 +77,7 @@ nav:hover{
 
 .tasks {
     overflow: auto;
-    height: 295px;
+    height: 245px;
     scrollbar-color: #007bff white;
 }
 
